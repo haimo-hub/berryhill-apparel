@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Berry Hill Apparel — Perth, Western Australia</title>
+<meta name="description" content="Berry Hill Apparel — Mantra and Offbike collections, made in small batches and revealed first through HerSportsClub Perth. Shop on Etsy.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
+
+  :root{
+    --cream:#F6F1E6;
+    --cream-soft:#ECE3D0;
+    --ink:#1C1B16;
+    --ink-soft:#514E42;
+    --olive:#4A5130;
+    --olive-deep:#30331F;
+    --sand:#C9A977;
+    --rose:#B97C6C;
+    --line: rgba(28,27,22,0.14);
+    --radius: 2px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1C1B16;
+      --cream-soft:#262419;
+      --ink:#F3EEE1;
+      --ink-soft:#C9C3B2;
+      --olive:#8C9566;
+      --olive-deep:#161509;
+      --sand:#C9A977;
+      --rose:#CE9484;
+      --line: rgba(243,238,225,0.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#1C1B16;
+    --cream-soft:#262419;
+    --ink:#F3EEE1;
+    --ink-soft:#C9C3B2;
+    --olive:#8C9566;
+    --olive-deep:#161509;
+    --sand:#C9A977;
+    --rose:#CE9484;
+    --line: rgba(243,238,225,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans',system-ui,sans-serif;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{
+    max-width:1180px;
+    margin-inline:auto;
+    padding-inline:24px;
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    line-height:1.05;
+    text-wrap:balance;
+    margin:0;
+  }
+  p{ line-height:1.65; color:var(--ink-soft); margin:0; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Work Sans',sans-serif;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:14px 22px;
+    border:1px solid var(--ink);
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:var(--ink);
+    background:transparent;
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn:hover{ background:var(--ink); color:var(--cream); }
+  .btn.solid{ background:var(--olive); border-color:var(--olive); color:var(--cream); }
+  .btn.solid:hover{ background:var(--olive-deep); border-color:var(--olive-deep); }
+
+  header{
+    position:sticky; top:0;
+    z-index:20;
+    background:rgba(246,241,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:16px;
+  }
+  .brand{ display:flex; flex-direction:column; gap:4px; }
+  .brand .word{ font-size:16px; letter-spacing:.2em; font-weight:600; text-transform:uppercase; }
+  .brand .dash{ width:22px; height:1px; background:var(--ink); }
+  nav{ display:flex; gap:28px; }
+  nav a{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    text-decoration:none; color:var(--ink-soft);
+  }
+  nav a:hover{ color:var(--ink); }
+  @media (max-width:640px){ nav{ display:none; } }
+
+  .hero{ padding-block:72px 56px; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:end;
+  }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero h1{ font-size:clamp(40px,6.4vw,78px); margin-top:14px; }
+  .hero h1 em{ font-style:italic; color:var(--olive); }
+  .hero-sub{ max-width:46ch; margin-top:20px; font-size:16px; }
+  .hero-ctas{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+  .hero-side{
+    border-top:1px solid var(--line); padding-top:18px;
+  }
+  .hero-side p{ font-size:14px; }
+  .hero-side .num{ font-family:'Fraunces',serif; font-size:13px; color:var(--sand); font-style:italic; }
+
+  .story{
+    background:var(--cream-soft);
+    padding-block:72px;
+    border-block:1px solid var(--line);
+  }
+  .story-grid{
+    display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; align-items:center;
+  }
+  @media (max-width:860px){ .story-grid{ grid-template-columns:1fr; } }
+  .story h2{ font-size:clamp(28px,4vw,40px); }
+  .pillars{ display:grid; gap:22px; margin-top:28px; }
+  .pillar{ display:flex; gap:16px; }
+  .pillar .tag{
+    flex:none; width:64px; height:64px; border-radius:50%;
+    border:1px solid var(--olive); color:var(--olive);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-style:italic; font-size:13px; text-align:center;
+  }
+  .pillar h3{ font-size:17px; font-weight:600; font-family:'Work Sans'; letter-spacing:.02em; }
+  .pillar p{ font-size:14px; margin-top:4px; }
+
+  .perth{
+    position:relative; overflow:hidden; color:#F3EEE1;
+    min-height:420px; display:flex; align-items:center;
+  }
+  .perth::before{
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(120% 140% at 15% 20%, rgba(28,27,22,0.15), rgba(16,16,10,0.72)), var(--ink);
+  }
+  .perth img.bg{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.55;
+    mix-blend-mode:screen;
+  }
+  .perth-content{ position:relative; padding-block:64px; max-width:560px; }
+  .perth .eyebrow{ color:#D9CBA6; }
+  .perth h2{ color:#F3EEE1; font-size:clamp(30px,4.5vw,46px); margin-top:10px; }
+  .perth p{ color:#E4DCC8; margin-top:16px; font-size:15px; max-width:44ch; }
+  .perth-icons{ display:flex; gap:22px; margin-top:26px; align-items:flex-end; }
+  .perth-icons img{ height:64px; width:auto; filter:brightness(0) invert(1); opacity:.9; }
+  .perth .btn{ margin-top:28px; border-color:#F3EEE1; color:#F3EEE1; }
+  .perth .btn:hover{ background:#F3EEE1; color:var(--ink); }
+
+  .products{ padding-block:80px; }
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:36px; flex-wrap:wrap; }
+  .section-head h2{ font-size:clamp(28px,4vw,38px); margin-top:8px; }
+  .section-head p{ max-width:40ch; font-size:14px; }
+  .grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+  }
+  @media (max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .grid{ grid-template-columns:1fr; } }
+  .card{
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    display:flex; flex-direction:column; background:var(--cream);
+  }
+  .card .shot{ position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--cream-soft); }
+  .card .shot img{ width:100%; height:100%; object-fit:cover; }
+  .shot-badge{
+    position:absolute; top:14px; left:14px;
+    background:rgba(246,241,230,0.92); color:var(--ink);
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    padding:6px 11px; border-radius:var(--radius);
+  }
+  .card .body{ padding:18px 18px 22px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .card .collection{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--olive); font-weight:600; }
+  .card h3{ font-size:19px; font-weight:500; }
+  .card p{ font-size:13.5px; flex:1; }
+  .card .row{ display:flex; justify-content:space-between; align-items:center; margin-top:6px; }
+  .price{ font-family:'Fraunces',serif; font-style:italic; font-size:16px; }
+  .mini-link{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; text-decoration:none; border-bottom:1px solid var(--ink); padding-bottom:2px; }
+
+  .more-shop{
+    margin-top:36px; border-top:1px solid var(--line); padding-top:28px;
+  }
+  .more-shop h4{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin-bottom:16px; }
+  .more-list{ display:grid; gap:0; }
+  .more-row{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding-block:14px; border-bottom:1px solid var(--line);
+    text-decoration:none; color:var(--ink);
+  }
+  .more-row:hover{ color:var(--olive); }
+  .more-row .name{ font-family:'Fraunces',serif; font-size:16px; }
+  .more-row .meta{ display:flex; gap:16px; align-items:center; font-size:12px; color:var(--ink-soft); }
+  .more-row .collection-tag{ text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; }
+
+  .note{ margin-top:30px; font-size:12.5px; color:var(--ink-soft); border-top:1px dashed var(--line); padding-top:18px; }
+
+  .community{ background:var(--olive-deep); color:#F3EEE1; padding-block:72px; }
+  .community-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+  @media (max-width:860px){ .community-grid{ grid-template-columns:1fr; } }
+  .community .eyebrow{ color:var(--sand); }
+  .community h2{ color:#F3EEE1; font-size:clamp(26px,3.6vw,36px); margin-top:10px; }
+  .community p{ color:#D9D2BF; margin-top:14px; font-size:14.5px; max-width:48ch; }
+  .community .btn{ border-color:#F3EEE1; color:#F3EEE1; margin-top:22px; }
+  .community .btn:hover{ background:#F3EEE1; color:var(--olive-deep); }
+  .community-photo{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    background:#0F0E08;
+  }
+  .community-photo img{ width:100%; height:100%; object-fit:cover; opacity:.92; }
+  .community-photo .badge{
+    position:absolute; bottom:14px; left:14px; background:#F3EEE1; color:var(--ink);
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+    padding:8px 12px; border-radius:var(--radius);
+  }
+  .community-mark{ display:flex; align-items:center; gap:16px; margin-bottom:22px; }
+  .community-mark img{ width:64px; height:64px; flex:none; }
+  .community-mark p{ color:#D9D2BF; font-size:12.5px; font-style:italic; max-width:38ch; }
+
+  footer{ background:var(--ink); color:var(--cream); padding-block:52px 32px; }
+  .footer-grid{ display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; }
+  footer .mark{ height:30px; }
+  footer .cols{ display:flex; gap:56px; flex-wrap:wrap; }
+  footer .col h4{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sand); margin:0 0 12px; font-weight:600; }
+  footer .col a{ display:block; font-size:13.5px; color:#DCD6C6; text-decoration:none; margin-bottom:8px; }
+  footer .col a:hover{ color:#fff; }
+  .foot-bottom{
+    margin-top:44px; padding-top:20px; border-top:1px solid rgba(243,238,225,0.14);
+    display:flex; justify-content:space-between; font-size:11.5px; color:#9A9484; flex-wrap:wrap; gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="word">Berry Hill</span>
+      <span class="dash"></span>
+    </div>
+    <nav>
+      <a href="#story">Story</a>
+      <a href="#perth">Perth Edition</a>
+      <a href="#shop">Shop</a>
+      <a href="#community">Community</a>
+    </nav>
+    <a class="btn" href="#shop" style="padding:10px 16px;">Shop the Edit</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Perth, Western Australia — Apparel</span>
+      <h1>Clothes for women who move, <em>not perform.</em></h1>
+      <p class="hero-sub">Berry Hill is the product side of a simple belief: sport is one way to empower women. Mantra is the mindset. Offbike is the motion. Every piece starts as something the founder actually wears first.</p>
+      <div class="hero-ctas">
+        <a class="btn solid" href="#shop">View the Collection</a>
+        <a class="btn" href="#perth">Going Out Perth Edition</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <img src="assets/logo-cream.png" alt="Berry Hill Apparel" style="max-width:220px; margin-bottom:22px;" onerror="this.style.display='none'">
+      <p class="num">01 — Live on Etsy</p>
+      <p>Seven pieces across Mantra and Offbike are live now, started as giveaways with the HerSportsClub Perth community before reaching the shop. More join as new designs are reviewed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <span class="eyebrow">The thesis of the collections</span>
+      <h2>Mantra is the mindset. Offbike is the motion.</h2>
+      <p style="margin-top:16px; font-size:15px;">We're not here to make you run faster or lift heavier. The point of showing up is reconnecting with yourself — movement is the vehicle, not the goal. Berry Hill exists so that feeling has something to wear.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="tag">M</div>
+        <div>
+          <h3>Mantra</h3>
+          <p>Self-affirmation, worn plainly — "Be Too Much," "Human Being." Pieces that say the thing out loud.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="tag">O</div>
+        <div>
+          <h3>Offbike</h3>
+          <p>Cycling-rooted casualwear, born from the founder's own riding habit and HerSportsClub's original Strava-club spirit.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="tag">P</div>
+        <div>
+          <h3>Perth</h3>
+          <p>Local-edition drops built around WA's own flora, fauna and rituals — the long mac, not the gum tree cliché.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="perth" id="perth">
+  <img class="bg" src="assets/perth-illustration.png" alt="" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="perth-content">
+      <span class="eyebrow">Live now — Special Edition</span>
+      <h2>Going Out Perth</h2>
+      <p>An oversized boxy tee drawn from the city itself — quokka, kookaburra, black cockatoo, kangaroo paw in full bloom, and the Swan River skyline. Not a tourist koala print. Drawn like someone who's actually out there.</p>
+      <div class="perth-icons">
+        <img src="assets/kangaroo-paw.png" alt="Kangaroo paw illustration" onerror="this.style.display='none'">
+        <img src="assets/cockatoo.png" alt="Cockatoo illustration" onerror="this.style.display='none'">
+      </div>
+      <a class="btn" href="https://www.etsy.com/au/listing/4600361508/unisex-boxy-tee-going-out-perth-special" target="_blank" rel="noopener">Shop Going Out Perth — AU$59.99</a>
+    </div>
+  </div>
+</section>
+
+<section class="products wrap" id="shop">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Live on Etsy now</span>
+      <h2>This season's edit</h2>
+    </div>
+    <p>Mantra (the mindset) and Offbike (the motion), plus the first Perth-edition drop — seven pieces, all shipping now.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="shot"><span class="shot-badge">Mantra</span><img src="assets/product-be-too-much.jpg" alt="Be Too Much cropped sweatshirt, olive"></div>
+      <div class="body">
+        <span class="collection">Mantra</span>
+        <h3>Be Too Much — Cropped Sweatshirt</h3>
+        <p>Too much fire. Too much body. Too much woman. The brand's most direct line, cropped and boxy.</p>
+        <div class="row">
+          <span class="price">AU$95.99</span>
+          <a class="mini-link" href="https://www.etsy.com/au/listing/4546884967/cropped-sweatshirt-be-too-much-mantra" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="shot"><span class="shot-badge">Offbike</span><img src="assets/product-i-ride.jpg" alt="I Ride cyclist crewneck sweatshirt, heather grey"></div>
+      <div class="body">
+        <span class="collection">Offbike</span>
+        <h3>Cyclist Sweatshirt — "I Ride"</h3>
+        <p>Long mac in hand, croissant on the table. For everything after the ride, not the ride itself.</p>
+        <div class="row">
+          <span class="price">AU$95.99</span>
+          <a class="mini-link" href="https://www.etsy.com/au/listing/4557854866/cyclist-sweatshirt-crewneck-with-kudos" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="shot"><span class="shot-badge">Offbike</span><img src="assets/product-ladies-ride.jpg" alt="Ladies Ride boxy tee, cream, back print"></div>
+      <div class="body">
+        <span class="collection">Offbike</span>
+        <h3>Women's Boxy Tee — Sunny Retro Bicycle</h3>
+        <p>A back-print built for the group ride — dumbbell, coffee cup, croissant, and the wheels that get you there.</p>
+        <div class="row">
+          <span class="price">AU$56.99</span>
+          <a class="mini-link" href="https://www.etsy.com/au/listing/4600336389/womens-boxy-tee-sunny-retro-bicycle" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-shop">
+    <h4>Also in the shop</h4>
+    <div class="more-list">
+      <a class="more-row" href="https://www.etsy.com/au/listing/4600362100/bicycle-croissant-and-coffee-graphic" target="_blank" rel="noopener">
+        <span class="name">Bicycle Croissant &amp; Coffee Graphic Cropped Tshirt</span>
+        <span class="meta"><span class="collection-tag">Offbike</span><span>AU$56.99</span></span>
+      </a>
+      <a class="more-row" href="https://www.etsy.com/au/listing/4600334901/mantra-crewneck-sweatshirt-unisex-heavy" target="_blank" rel="noopener">
+        <span class="name">MANTRA Crewneck Sweatshirt — Personalisable</span>
+        <span class="meta"><span class="collection-tag">Mantra</span><span>AU$59.99</span></span>
+      </a>
+      <a class="more-row" href="https://www.etsy.com/au/listing/4557808033/box-tee-minimalist-human-being-script" target="_blank" rel="noopener">
+        <span class="name">Minimalist "Human Being" Script Tee</span>
+        <span class="meta"><span class="collection-tag">Mantra</span><span>AU$59.99</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap community-grid">
+    <div>
+      <div class="community-mark">
+        <img src="assets/hersportsclub-logo.png" alt="HerSportsClub Perth logo" onerror="this.style.display='none'">
+        <p>No two faces are the same.<br>Every side of you, and us.</p>
+      </div>
+      <span class="eyebrow">The community side</span>
+      <h2>HerSportsClub Perth is where it's tested first</h2>
+      <p>Berry Hill isn't sold through the community — it's revealed there. New pieces start as giveaways at real events, like the first community merch promised to October Challenge winners, before they ever reach a shop listing.</p>
+      <a class="btn" href="https://www.facebook.com/groups/1608342866413215" target="_blank" rel="noopener">Join HerSportsClub Perth →</a>
+    </div>
+    <div class="community-photo">
+      <img src="assets/giveaway-tee.png" alt="October Challenge giveaway tee" onerror="this.style.display='none'">
+      <span class="badge">OCT Challenge giveaway, 2026</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="mark" src="assets/logo-dark.png" alt="Berry Hill" onerror="this.style.display='none'">
+      </div>
+      <div class="cols">
+        <div class="col">
+          <h4>Shop</h4>
+          <a href="#shop">This season's edit</a>
+          <a href="#perth">Going Out Perth</a>
+        </div>
+        <div class="col">
+          <h4>Community</h4>
+          <a href="https://www.facebook.com/groups/1608342866413215" target="_blank" rel="noopener">Facebook Group</a>
+          <a href="https://www.instagram.com/hersportsclubperth/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://strave.app.link/QwquS40Lr7b" target="_blank" rel="noopener">Strava Club</a>
+        </div>
+        <div class="col">
+          <h4>Say hello</h4>
+          <a href="mailto:hiberryhill@outlook.com">hiberryhill@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Berry Hill Apparel — Perth, WA</span>
+      <span>Shop live on Etsy</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
